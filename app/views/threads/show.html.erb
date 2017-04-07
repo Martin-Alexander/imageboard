@@ -12,7 +12,7 @@
 <table>
   <% @thread.posts.each do |i| %>
     <tr>
-      <td><p><%= i.upvotes %></p></td>
+      <td><p><%= link_to i.upvotes, post_upvote_path(i) %> - </p></td>
       <td><p><%= i.content %></p></td>
     </tr>
   <% end %>
