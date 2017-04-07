@@ -1,0 +1,7 @@
+<p><%= link_to "BACK", threads_path %></p>
+
+<%= simple_form_for TopThread.new, url: threads_create_path do |i| %>
+  <%= i.input :title %>
+  <%= i.input :content %>
+  <%= i.submit %>
+<% end %>

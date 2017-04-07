@@ -1,0 +1,18 @@
+<p><%= link_to "BACK", threads_path %></p>
+
+<p><%= @thread.content %></p>
+
+<%= simple_form_for [@thread, Post.new], url: post_create_path do |i| %>
+  <%= i.input :content, label: false %>
+  <%= i.submit "Comment" %>
+<% end %>
+
+<table>
+  <% @thread.posts.each do |i| %>
+    <tr>
+      <td><p><%= i.upvotes %></p></td>
+      <td><p><%= i.content %></p></td>
+    </tr>
+  <% end %>
+</table>
+
