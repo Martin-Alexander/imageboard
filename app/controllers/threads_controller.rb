@@ -11,7 +11,10 @@ class ThreadsController < ApplicationController
   end
 
   def create
-    TopThread.create(thread_params)
+    @thread = TopThread.new(thread_params)
+    @thread.upvotes = 1
+    @thread.save
+    redirect_to thread_path(@thread)
   end
 
   def thread_params

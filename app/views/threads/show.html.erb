@@ -1,10 +1,12 @@
 <p><%= link_to "BACK", threads_path %></p>
-
+<h2><%= @thread.title %></h2>
 <p><%= @thread.content %></p>
+<hr>
 
+<p>Submit a Comment:</p>
 <%= simple_form_for [@thread, Post.new], url: post_create_path do |i| %>
   <%= i.input :content, label: false %>
-  <%= i.submit "Comment" %>
+  <%= i.submit "Submit" %>
 <% end %>
 
 <table>
