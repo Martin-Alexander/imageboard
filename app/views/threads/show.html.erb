@@ -5,7 +5,7 @@
 
 <p>Submit a Comment:</p>
 <%= simple_form_for [@thread, Post.new], url: post_create_path do |i| %>
-  <%= i.input :content, label: false %>
+  <%= i.input :content, label: false, :input_html => { class: 'text', :cols => 40, :rows => 5 } %>
   <%= i.submit "Submit" %>
 <% end %>
 

@@ -1,13 +1,16 @@
-<%= link_to "Create New Thread", threads_new_path %>
+<h2><%= link_to "Create New Thread", threads_new_path %></h2>
 
-<table>
-  <% @threads.each do |i| %>
+<hr>
+
+ <% @threads.each do |i| %>
+  <table>
     <tr><td><h3><%= link_to i.title, thread_path(i) %></h3></td></tr>
     <tr><td><p>Upvotes: <%= i.upvotes %></td></p></td>
     <tr><td><p>Comments: <%= i.posts.count %></td></p></td>
     <tr><td><p>Created At: <%= i.created_at.httpdate %></td></p></td>
-  <% end %>
-</table>
+  </table>
+  <hr>
+<% end %>
 
 <style>
   a {

@@ -6,6 +6,6 @@
   <p>Title</p>
   <%= i.input :title, label: false %>
   <p>Content</p>
-  <%= i.input :content, label: false %>
+  <%= i.input :content, label: false, :input_html => { class: 'text', :cols => 40, :rows => 5 } %>
   <%= i.submit %>
 <% end %>
